@@ -15,13 +15,13 @@ resource "aws_lb_target_group" "target_group" {
 
 resource "aws_lb_target_group_attachment" "attach1" {
   target_group_arn = aws_lb_target_group.target_group.arn
-  target_id        = ["${aws_instance.INSTANCES["a"].id}"]
+  target_id        = aws_instance.MaciejBekasDemoEasy["a"].id
   port             = 8080
 }
 
 resource "aws_lb_target_group_attachment" "attach2" {
   target_group_arn = aws_lb_target_group.target_group.arn
-  target_id        = ["${aws_instance.INSTANCES["b"].id}"]
+  target_id        = aws_instance.MaciejBekasDemoEasy["b"].id
   port             = 8080
 }
 
