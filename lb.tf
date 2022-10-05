@@ -3,7 +3,7 @@ resource "aws_lb" "MaciejBekas-easy-LB" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.MaciejBekas-easy-sec-group.id]
-  subnets            = ["${aws_subnet.subnets["a"].id}","${aws_subnet.subnets["b"].id}"]
+  subnets            = ["${aws_subnet.MY_SUBNETS["a"].id}","${aws_subnet.MY_SUBNETS["b"].id}"]
 }
 
 resource "aws_lb_target_group" "target_group" {

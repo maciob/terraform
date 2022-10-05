@@ -3,7 +3,7 @@ resource "aws_instance" "MaciejBekasDemoEasy" {
     instance_type = "t2.micro"
     availability_zone = "${var.AWS_REGION}"
     # VPC
-    subnet_id = "${aws_subnet.subnets["a"].id}"
+    subnet_id = "${aws_subnet.MY_SUBNETS["a"].id}"
     # Security Group
     #vpc_security_group_ids = ["${aws_security_group.ssh-allowed.id}"]
     # the Public SSH key
@@ -52,7 +52,7 @@ resource "aws_instance" "MaciejBekasDemoEasy2" {
     instance_type = "t2.micro"
     availability_zone = "${var.AWS_REGION}"
     # VPC
-    subnet_id = "${aws_subnet.subnets["b"].id}"
+    subnet_id = "${aws_subnet.MY_SUBNETS["b"].id}"
     # Security Group
     #vpc_security_group_ids = ["${aws_security_group.ssh-allowed.id}"]
     # the Public SSH key

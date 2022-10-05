@@ -21,12 +21,12 @@ resource "aws_route_table" "MaciejBekas-easy-public-crt" {
 }
 
 resource "aws_route_table_association" "MaciejBekas-easy-crta-public-subnet-1"{
-    subnet_id = "${aws_subnet.subnets["a"].id}"
+    subnet_id = "${aws_subnet.MY_SUBNETS["a"].id}"
     route_table_id = "${aws_route_table.MaciejBekas-easy-public-crt.id}"
 }
 
 resource "aws_route_table_association" "MaciejBekas-easy-crta-public-subnet-2"{
-    subnet_id = "${aws_subnet.subnets["b"].id}"
+    subnet_id = "${aws_subnet.MY_SUBNETS["b"].id}"
     route_table_id = "${aws_route_table.MaciejBekas-easy-public-crt.id}"
 }
 
