@@ -1,7 +1,7 @@
 resource "aws_instance" "MaciejBekasDemoEasy" {
     ami = "ami-0f540e9f488cfa27d"
     instance_type = "t2.micro"
-    availability_zone = "${var.AWS_REGION}"
+    availability_zone = "${aws_subnet.MY_SUBNETS["b"].az}"
     # VPC
     subnet_id = "${aws_subnet.MY_SUBNETS["a"].id}"
     # Security Group
@@ -50,7 +50,7 @@ resource "aws_instance" "MaciejBekasDemoEasy" {
 resource "aws_instance" "MaciejBekasDemoEasy2" {
     ami = "ami-0f540e9f488cfa27d"
     instance_type = "t2.micro"
-    availability_zone = "${var.AWS_REGION}"
+    availability_zone = "${aws_subnet.MY_SUBNETS["b"].az}"
     # VPC
     subnet_id = "${aws_subnet.MY_SUBNETS["b"].id}"
     # Security Group
