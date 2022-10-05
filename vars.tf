@@ -7,6 +7,9 @@ variable "KEY_PATH"{
 variable "VPC_NAME"{
     default = "MaciejBekas-easy-vpc"
 }
-variable "SUBNET_1"{
-    default = 
+variable "MY_SUBNETS"{
+    type = map(object({
+        cidr = string
+        az = string
+    }))
 }
