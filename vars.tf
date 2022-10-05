@@ -13,3 +13,10 @@ variable "MY_SUBNETS"{
         az = string
     }))
 }
+variable "INSTANCES"{
+    type = map(object({
+        az = string
+        subnet = string
+        name = string
+    }))
+}
