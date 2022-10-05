@@ -16,7 +16,7 @@ variable "MY_SUBNETS"{
 variable "INSTANCES"{
     type = map(object({
         az = string
-        subnet = string
+        ver = string
         name = string
     }))
 }
