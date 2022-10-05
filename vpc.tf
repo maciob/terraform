@@ -7,21 +7,13 @@ resource "aws_vpc" "MaciejBekas-easy-vpc" {
         Name = "MaciejBekas-easy-vpc"
     }
 }
-resource "aws_subnet" "MaciejBekas-easy-subnet-public-1" {
+resource "aws_subnet" "MY_SUBNETS" {
+    for_each = var.MY_SUBNETS
     vpc_id = "${aws_vpc.MaciejBekas-easy-vpc.id}"
-    cidr_block = "10.0.0.0/28"
+    cidr_block = each.value.cidr
+    availability_zone = each.value.az
     map_public_ip_on_launch = "true" //it makes this a public subnet
-    availability_zone = "eu-west-2a"
     tags = {
-        Name = "MaciejBekas-easy-subnet-public-1"
-    }
-}
-resource "aws_subnet" "MaciejBekas-easy-subnet-public-2" {
-    vpc_id = "${aws_vpc.MaciejBekas-easy-vpc.id}"
-    cidr_block = "10.0.0.16/28"
-    map_public_ip_on_launch = "true" //it makes this a public subnet
-    availability_zone = "eu-west-2b"
-    tags = {
-        Name = "MaciejBekas-easy-subnet-public-2"
+        Name = "MaciejBekas-easy-public-${each.valuze.az}"
     }
 }
