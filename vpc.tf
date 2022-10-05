@@ -13,8 +13,8 @@ resource "aws_subnet" "MY_SUBNETS" {
     cidr_block = each.value.cidr
     availability_zone = each.value.az
     map_public_ip_on_launch = "true" //it makes this a public subnet
-    
+
     tags = {
-        Name = "MaciejBekas-easy-public-${each.valuze.az}"
+        Name = "MaciejBekas-easy-public-${each.value.az}"
     }
 }
